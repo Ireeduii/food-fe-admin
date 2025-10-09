@@ -3,7 +3,7 @@ import { Button } from "./ui/button";
 export const SideBar = () => {
   // return <div className="bg-white w-1/6 h-screen">Sidebar</div>;
   return (
-    <div className="flex gap-y-9 ml-[20px]">
+    <div className="flex gap-y-9 ml-[20px] bg-white w-[120px]">
       <div className="flex flex-col w-[205px] items-start ">
         <div>
           <img className="w-[36px] h-[30px] mt-[36px]" src="hat.png" />{" "}
