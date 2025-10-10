@@ -28,9 +28,9 @@ export const CreateFoodDialog = () => {
 
     const form = new FormData();
 
-    form.append("foodName", name);
+    form.append("name", name);
     form.append("price", String(price));
-    form.append("asd", image); // File object
+    form.append("image", image); // File object
     form.append("ingredients", ingredients);
     form.append("category", category);
 
@@ -89,7 +89,6 @@ export const CreateFoodDialog = () => {
             <Input
               id="name"
               name="name"
-              defaultValue={name}
               value={name}
               onChange={nameChangeHandler}
             />
@@ -100,7 +99,6 @@ export const CreateFoodDialog = () => {
               id="price"
               name="price"
               type="number"
-              defaultValue="0"
               value={price}
               onChange={priceChangeHandler}
             />
