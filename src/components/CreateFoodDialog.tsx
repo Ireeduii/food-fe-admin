@@ -76,7 +76,10 @@ export const CreateFoodDialog = () => {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button variant="outline" className="mt-[90px]">
+        <Button
+          variant="outline"
+          className="mt-[90px] border-dotted border-red-400 w-[200px]"
+        >
           Open Dialog
         </Button>
       </DialogTrigger>

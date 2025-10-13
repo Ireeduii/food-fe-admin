@@ -66,7 +66,7 @@ export default function ProductPage() {
       <div className="flex flex-wrap gap-2">
         {categories.map((category) => (
           <div
-            className="flex items-center border-2 rounded-full p-2 py-0"
+            className="flex items-center border-2 rounded-full p-2 py-0 "
             key={category}
           >
             {category}
@@ -77,13 +77,15 @@ export default function ProductPage() {
           </div>
         ))}
         <Dialog open={modalOpen}>
-          <DialogTrigger asChild>
+          <DialogTrigger asChild className="border-none">
             <Badge
               onClick={() => setModalOpen(true)}
               variant={"outline"}
               className="cursor-pointer hover:bg-gray-500/20"
             >
-              +
+              <Button className="rounded-full bg-red-500 w-[20px] h-[25px] border-none">
+                +
+              </Button>
             </Badge>
           </DialogTrigger>
           <DialogContent className="w-[463px] p-6">
