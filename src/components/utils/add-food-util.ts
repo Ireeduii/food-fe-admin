@@ -1,4 +1,4 @@
-export const addFoodHandler = async (
+export const AddFoodHandler = async (
   name: string,
   price: number,
   image: File,

@@ -8,6 +8,7 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
+  DialogDescription,
 } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -104,7 +105,7 @@ export const CreateFoodDialog = () => {
             />
           </div>
           <div className="grid w-full max-w-sm items-center gap-3">
-            <Label htmlFor="picture">Picture</Label>
+            <Label htmlFor="picture">Image</Label>
             <Input id="picture" type="file" onChange={fileChangeHandler} />
           </div>
           <div className="grid gap-3">
@@ -134,6 +135,7 @@ export const CreateFoodDialog = () => {
             <p className="leading-5"> Save changes</p>
           </Button>
         </div>
+        <DialogDescription></DialogDescription>
         <DialogFooter></DialogFooter>
       </DialogContent>
     </Dialog>
