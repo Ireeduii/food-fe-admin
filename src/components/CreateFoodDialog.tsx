@@ -135,7 +135,7 @@ export const CreateFoodDialog = () => {
             className="w-fit px-4 py-[10px]"
             onClick={addFoodHandler}
           >
-            <p className="leading-5"> Save changes</p>
+            <p className="leading-5"> Add dish</p>
           </Button>
         </div>
         <DialogDescription></DialogDescription>

@@ -22,9 +22,9 @@ export default function ProductPage() {
   const getCategories = async () => {
     const result = await fetch("http://localhost:4000/api/categories");
     const responseData = await result.json();
-    console.log({ responseData });
+    // console.log({ responseData });
     const { data } = responseData;
-    console.log(data);
+    // console.log(data);
     setCategories(data);
   };
 
@@ -66,7 +66,7 @@ export default function ProductPage() {
       <div className="flex flex-wrap gap-2">
         {categories.map((category) => (
           <div
-            className="flex items-center border-2 rounded-full p-2 py-0 "
+            className="flex items-center border-2 rounded-full p-2 py-0  "
             key={category}
           >
             {category}
@@ -76,10 +76,9 @@ export default function ProductPage() {
             />
           </div>
         ))}
-        <Dialog open={modalOpen}>
+        <Dialog>
           <DialogTrigger asChild className="border-none">
             <Badge
-              onClick={() => setModalOpen(true)}
               variant={"outline"}
               className="cursor-pointer hover:bg-gray-500/20"
             >
