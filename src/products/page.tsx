@@ -8,23 +8,26 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
+  DialogDescription,
 } from "@/components/ui/dialog";
 import { ChangeEvent, useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { X } from "lucide-react";
 
+type Category = { name: string; id: string };
+
 export default function ProductPage() {
-  const [categories, setCategories] = useState<string[]>([]);
+  const [categories, setCategories] = useState<Category[]>([]);
   const [newCategory, setNewCategory] = useState<string | undefined>();
   const [modalOpen, setModalOpen] = useState<boolean>(false);
 
   const getCategories = async () => {
     const result = await fetch("http://localhost:4000/api/categories");
     const responseData = await result.json();
-    // console.log({ responseData });
+    console.log({ responseData });
     const { data } = responseData;
-    // console.log(data);
+    console.log(data);
     setCategories(data);
   };
 
@@ -50,39 +53,41 @@ export default function ProductPage() {
     await getCategories();
   };
 
-  const deleteCategoryHandler = async (category: string) => {
+  const deleteCategoryHandler = async (categoryId: string) => {
     await fetch("http://localhost:4000/api/categories/delete", {
       method: "POST",
       mode: "no-cors",
       headers: {
         "Content-type": "application/json",
       },
-      body: JSON.stringify(category),
+      body: JSON.stringify({ categoryId }),
     });
+    await getCategories();
   };
 
   return (
     <AdminLayout className="">
       <div className="flex flex-wrap gap-2">
-        {categories.map((category) => (
+        {categories?.map((category) => (
           <div
-            className="flex items-center border-2 rounded-full p-2 py-0  "
-            key={category}
+            className="flex items-center border-2 rounded-full p-2 py-0"
+            key={category.id}
           >
-            {category}
+            {category.name}
             <X
               className="hover:bg-gray-400/20 w-4"
-              onClick={() => deleteCategoryHandler(category)}
+              onClick={() => deleteCategoryHandler(category.id)}
             />
           </div>
         ))}
         <Dialog>
+          <DialogDescription>.</DialogDescription>
           <DialogTrigger asChild className="border-none">
             <Badge
               variant={"outline"}
               className="cursor-pointer hover:bg-gray-500/20"
             >
-              <Button className="rounded-full bg-red-500 w-[20px] h-[25px] border-none">
+              <Button className="rounded-full bg-red-500 w-[20px] h-[25px] border-none ml-3">
                 +
               </Button>
             </Badge>

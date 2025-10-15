@@ -104,5 +104,5 @@
 //   );
 // }
 export const Header = () => {
-  return <div className="bg-gray-50 w-full h-16"></div>;
+  return <div className="w-full h-20"></div>;
 };

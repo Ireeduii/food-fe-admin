@@ -9,12 +9,12 @@ export const SideBar = () => {
           <img className="w-[36px] h-[30px] mt-[36px]" src="hat.png" />{" "}
         </div>
         <div className="flex flex-col">
-          <h3 className="text-[18px]">NomNom</h3>
+          <h3 className="text-[18px] font-semibold">NomNom</h3>
           <span className="text-[12px] text-gray-500">Swift delivery</span>
         </div>
 
         <Button className="mt-[30px] bg-black border">Food menu</Button>
-        <Button className="mt-[15px] w-[100px] bg-white border text-black">
+        <Button className="mt-[15px] w-[108px] bg-white border text-black ">
           Orders
         </Button>
       </div>

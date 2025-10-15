@@ -13,6 +13,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { ChangeEvent, useState } from "react";
+import { SelectDemo } from "./Select";
 
 export const CreateFoodDialog = () => {
   const [image, setImage] = useState<File | undefined>();
@@ -78,7 +79,7 @@ export const CreateFoodDialog = () => {
       <DialogTrigger asChild>
         <Button
           variant="outline"
-          className="mt-[90px] border-dotted border-red-400 w-[200px]"
+          className="mt-[90px] ml-7 border-dotted border-red-400 w-[300px] h-[200px]"
         >
           Open Dialog
         </Button>
@@ -122,12 +123,13 @@ export const CreateFoodDialog = () => {
           </div>
           <div className="grid gap-3">
             <Label htmlFor="category">Category</Label>
-            <Input
+            {/* <Input
               id="category"
               name="category"
               value={category}
               onChange={categoryChangeHandler}
-            />
+            /> */}
+            <SelectDemo />
           </div>
           <Button
             type="submit"
@@ -135,7 +137,7 @@ export const CreateFoodDialog = () => {
             className="w-fit px-4 py-[10px]"
             onClick={addFoodHandler}
           >
-            <p className="leading-5"> Add dish</p>
+            <p className="leading-5 "> Add dish</p>
           </Button>
         </div>
         <DialogDescription></DialogDescription>
