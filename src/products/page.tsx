@@ -1,7 +1,7 @@
 "use client";
 import { Badge } from "@/components/ui/badge";
 import { AdminLayout } from "../components/AdminLayout";
-import { CreateFoodDialog } from "../components/CreateFoodDialog";
+import { CreateFoodDialog } from "@/components/CreateFoodDialog";
 import {
   Dialog,
   DialogContent,
@@ -105,7 +105,12 @@ export default function ProductPage() {
           </DialogContent>
         </Dialog>
       </div>
-      <CreateFoodDialog />
+      <CreateFoodDialog
+        categoryId={""}
+        refetchFoods={function (): Promise<void> {
+          throw new Error("Function not implemented.");
+        }}
+      />
     </AdminLayout>
   );
 }
