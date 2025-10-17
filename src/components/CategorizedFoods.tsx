@@ -18,7 +18,7 @@ export const CategorizedFoods = ({
           categoryId={category._id}
           refetchFoods={refetchFoods}
         />
-        {foods.map((food: FoodType) => (
+        {foods?.map((food: FoodType) => (
           <div key={food._id}>
             <p>{food.name}</p>
             <img src={food.imageUrl} alt="" className="w-40 h-40" />
@@ -28,3 +28,33 @@ export const CategorizedFoods = ({
     </div>
   );
 };
+
+// import { CategoryType, FoodType } from "@/lib/types";
+// import { CreateFoodDialog } from "./CreateFoodDialog";
+// export const CategorizedFoods = ({
+//   foods,
+//   category,
+//   refetchFoods,
+// } : {
+//   foods; FoodType[];
+//   category: CatgegotyType;
+//   refetchFoods: () => Promise<void>
+// }) => {
+//   return (
+//     <div className="p-4 rounded-lg bg-white">
+//       <h2>{category.name}</h2>
+//       <div className="flex flex-wrap gap-2">
+//         <CreateFoodDialog
+//         categoryId={category._id}
+//         refetchFoods={refetchFoods}
+//         />
+//         {foods.map((foods: FoodType) => (
+//          <div>
+//           <p>{foods.name}</p>
+//           <img src={foods.imageUrl} alt="" className="w-40 h-40" />
+//          </div>
+//         ))}
+//       </div>
+//     </div>
+//   )
+// }

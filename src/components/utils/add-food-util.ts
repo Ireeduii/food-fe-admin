@@ -14,7 +14,7 @@ export const AddFoodHandler = async (
 
   form.append("name", name);
   form.append("price", String(price));
-  form.append("image", image); // File object
+  form.append("image", image);
   form.append("ingredients", ingredients);
   form.append("category", category);
 

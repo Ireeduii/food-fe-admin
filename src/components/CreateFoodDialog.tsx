@@ -177,7 +177,7 @@ export const CreateFoodDialog = ({
   const [name, setName] = useState<string>("");
   const [price, setPrice] = useState<number>(0);
   const [ingredients, setIngredients] = useState<string>("");
-  const [open, setOpen] = useState<boolean>(closed);
+  const [open, setOpen] = useState<boolean>(false);
 
   const addFoodHandler = async () => {
     if (!name || !price || !image || !ingredients) {
@@ -234,7 +234,7 @@ export const CreateFoodDialog = ({
       <DialogTrigger asChild>
         <div
           onClick={() => setOpen(true)}
-          className="cursor-pointer hover:bg-gray-200 rounded-lg w-40 h-40 border border-dashed border-2 flex justify-center items-center"
+          className="cursor-pointer hover:bg-gray-200 rounded-lg w-40 h-40 border-2   border-dashed flex justify-center items-center"
         >
           +
         </div>
